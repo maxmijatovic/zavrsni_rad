@@ -1,0 +1,7 @@
+maxmijatovic\jp21zavrsni\model\Entitet.class
+maxmijatovic\jp21zavrsni\model\Participant.class
+maxmijatovic\jp21zavrsni\model\BirdCount.class
+maxmijatovic\jp21zavrsni\Start.class
+maxmijatovic\jp21zavrsni\model\Site.class
+maxmijatovic\jp21zavrsni\model\Species.class
+maxmijatovic\jp21zavrsni\util\HibernateUtil.class
