@@ -7,15 +7,15 @@ package maxmijatovic.jp21zavrsni.model;
 
 import java.math.BigDecimal;
 import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Entity;
 
 /**
  *
  * @author Alice
  */
 
-@MappedSuperclass
-public abstract class Site extends Entitet{
+@Entity
+public class Site extends Entitet{
     
     @Column(name = "site_name")
     private String siteName;

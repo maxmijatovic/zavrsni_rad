@@ -5,8 +5,11 @@
  */
 package maxmijatovic.jp21zavrsni.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 /**
@@ -26,11 +29,22 @@ public class BirdCount extends Entitet{
     private String weather;
     private String disturbed;
     
+    @ManyToMany
+    private List<Species> specieses = new ArrayList<>();
+    
     @ManyToOne
     private Site site;
     
     @ManyToOne
     private Participant participant;
+
+    public List<Species> getSpecieses() {
+        return specieses;
+    }
+
+    public void setSpecieses(List<Species> specieses) {
+        this.specieses = specieses;
+    }
 
     public Date getDate() {
         return date;

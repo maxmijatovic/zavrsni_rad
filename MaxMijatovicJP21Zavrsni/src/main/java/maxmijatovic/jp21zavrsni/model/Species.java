@@ -6,14 +6,14 @@
 package maxmijatovic.jp21zavrsni.model;
 
 import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Entity;
 
 /**
  *
  * @author Alice
  */
-@MappedSuperclass
-public abstract class Species extends Entitet {
+@Entity
+public class Species extends Entitet {
     
     @Column(name = "scientific_name_genus")
     private String scientificNameGenus;
