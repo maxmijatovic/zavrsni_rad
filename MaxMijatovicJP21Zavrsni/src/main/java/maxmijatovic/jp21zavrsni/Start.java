@@ -6,6 +6,7 @@
 package maxmijatovic.jp21zavrsni;
 
 import maxmijatovic.jp21zavrsni.util.HibernateUtil;
+import maxmijatovic.jp21zavrsni.util.Pomocno;
 
 /**
  *
@@ -16,6 +17,8 @@ public class Start {
     public Start(){
         
         HibernateUtil.getSessionFactory().openSession();
+        
+        Pomocno.pocetniInsert();
         
     }
     

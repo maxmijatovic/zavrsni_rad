@@ -49,6 +49,7 @@
         <mapping class="maxmijatovic.jp21zavrsni.model.Site" />
         <mapping class="maxmijatovic.jp21zavrsni.model.Species" />
         <mapping class="maxmijatovic.jp21zavrsni.model.BirdCount" />
+        <mapping class="maxmijatovic.jp21zavrsni.model.Counter" />
         
         
         

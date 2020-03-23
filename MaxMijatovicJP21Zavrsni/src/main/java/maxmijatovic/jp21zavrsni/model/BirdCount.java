@@ -11,12 +11,14 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author Alice
  */
 @Entity
+@Table(name = "bird_count")
 public class BirdCount extends Entitet{
     
     private Date date;
@@ -29,8 +31,7 @@ public class BirdCount extends Entitet{
     private String weather;
     private String disturbed;
     
-    @ManyToMany
-    private List<Species> specieses = new ArrayList<>();
+   
     
     @ManyToOne
     private Site site;
@@ -38,13 +39,6 @@ public class BirdCount extends Entitet{
     @ManyToOne
     private Participant participant;
 
-    public List<Species> getSpecieses() {
-        return specieses;
-    }
-
-    public void setSpecieses(List<Species> specieses) {
-        this.specieses = specieses;
-    }
 
     public Date getDate() {
         return date;
