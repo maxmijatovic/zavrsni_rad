@@ -13,6 +13,15 @@ public class EdunovaExeption extends Exception {
     
     private String poruka;
 
+    public EdunovaExeption(String message) {
+        super(message);
+    }
+
+   
+    
+    
+    
+
     public String getPoruka() {
         return poruka;
     }

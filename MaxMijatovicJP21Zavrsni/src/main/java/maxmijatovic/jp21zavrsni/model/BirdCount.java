@@ -11,6 +11,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -38,8 +39,21 @@ public class BirdCount extends Entitet{
     
     @ManyToOne
     private Participant participant;
+    
+    @OneToMany(mappedBy = "birdCount")
+    private List<Counter> counters = new ArrayList<>();
+    
+
+    public List<Counter> getCounters() {
+        return counters;
+    }
+
+    public void setCounters(List<Counter> counters) {
+        this.counters = counters;
+    }
 
 
+    
     public Date getDate() {
         return date;
     }

@@ -7,6 +7,7 @@ package maxmijatovic.jp21zavrsni;
 
 import maxmijatovic.jp21zavrsni.util.HibernateUtil;
 import maxmijatovic.jp21zavrsni.util.Pomocno;
+import maxmijatovic.jp21zavrsni.view.SplashScreen;
 
 /**
  *
@@ -16,9 +17,11 @@ public class Start {
     
     public Start(){
         
-        HibernateUtil.getSessionFactory().openSession();
+        //HibernateUtil.getSessionFactory().openSession();
         
-        Pomocno.pocetniInsert();
+        //Pomocno.pocetniInsert();
+        
+         new SplashScreen().setVisible(true);
         
     }
     

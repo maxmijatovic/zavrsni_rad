@@ -17,7 +17,17 @@ public class Participant extends Entitet{
     private String name;
     private String surename;
     private String email;
+    private String lozinka;
 
+    public String getLozinka() {
+        return lozinka;
+    }
+
+    public void setLozinka(String lozinka) {
+        this.lozinka = lozinka;
+    }
+    
+    
     public String getName() {
         return name;
     }

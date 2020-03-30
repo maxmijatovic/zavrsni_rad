@@ -41,6 +41,9 @@ public class ObradaBirdCount extends Obrada<BirdCount>{
      private void save() {
         session.beginTransaction();
         session.save(entitet);
+        entitet.getCounters().forEach((c)-> {
+            session.save(c);
+        });
         session.getTransaction().commit();
     }
     

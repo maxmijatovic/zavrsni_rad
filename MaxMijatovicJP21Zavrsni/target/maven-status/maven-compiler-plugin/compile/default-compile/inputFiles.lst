@@ -3,10 +3,12 @@ F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\model\Site.java
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\Start.java
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\controller\ObradaBirdCount.java
+F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\view\SplashScreen.java
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\model\BirdCount.java
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\controller\ObradaSpecies.java
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\controller\ObradaCounter.java
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\model\Participant.java
+F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\view\Izbornik.java
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\controller\Obrada.java
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\util\Pomocno.java
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\controller\ObradaParticipant.java
@@ -14,3 +16,4 @@ F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\model\Species.java
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\util\EdunovaExeption.java
 F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\util\HibernateUtil.java
+F:\Java\Predavanja_materijali\NetBeans_zavrsni\MaxMijatovicJP21Zavrsni\src\main\java\maxmijatovic\jp21zavrsni\view\Autorizacija.java

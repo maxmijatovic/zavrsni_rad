@@ -38,6 +38,15 @@ public abstract class Obrada<T> {
         this();
         this.entitet = entitet;
     }
+
+    public T getEntitet() {
+        return entitet;
+    }
+
+    public void setEntitet(T entitet) {
+        this.entitet = entitet;
+    }
+    
     
     
     
@@ -47,6 +56,20 @@ public abstract class Obrada<T> {
         save();
         nakonSpremanja();
         return entitet;
+        
+    }
+    
+     public void createAll(List<T> lista) throws EdunovaExeption{
+    
+        session.beginTransaction();
+        for(T sl : lista){
+            this.entitet=sl;
+            kontrolaCreate();
+            session.save(sl);
+            nakonSpremanja();
+        }
+        session.getTransaction().commit();
+        
         
     }
     
