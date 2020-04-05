@@ -7,7 +7,8 @@ package maxmijatovic.jp21zavrsni.controller;
 
 import java.util.List;
 import maxmijatovic.jp21zavrsni.model.Species;
-import maxmijatovic.jp21zavrsni.util.EdunovaExeption;
+import maxmijatovic.jp21zavrsni.util.BirdCounterException;
+
 
 /**
  *
@@ -16,17 +17,17 @@ import maxmijatovic.jp21zavrsni.util.EdunovaExeption;
 public class ObradaSpecies extends Obrada<Species>{
 
     @Override
-    protected void kontrolaCreate() throws EdunovaExeption {
+    protected void kontrolaCreate() throws BirdCounterException {
         
     }
 
     @Override
-    protected void kontrolaUpdate() throws EdunovaExeption {
+    protected void kontrolaUpdate() throws BirdCounterException {
         
     }
 
     @Override
-    protected void kontrolaDelete() throws EdunovaExeption {
+    protected void kontrolaDelete() throws BirdCounterException {
         
     }
 
@@ -34,9 +35,16 @@ public class ObradaSpecies extends Obrada<Species>{
     public List<Species> getPodaci() {
        return session.createQuery("from Species").list();
     }
+    
+    public List<Species> getPodaci(String uvjet){
+        return session.createQuery("from Species s "
+                + " where concat(s.englishName) like :uvjet ")
+                .setParameter("uvjet", "%" + uvjet + "%")
+                .setMaxResults(10).list();
+    }
 
     @Override
-    protected void nakonSpremanja() throws EdunovaExeption {
+    protected void nakonSpremanja() throws BirdCounterException {
         
     }
     

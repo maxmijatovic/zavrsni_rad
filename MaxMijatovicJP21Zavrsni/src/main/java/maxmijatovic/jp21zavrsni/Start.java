@@ -21,7 +21,7 @@ public class Start {
         
         //Pomocno.pocetniInsert();
         
-         new SplashScreen().setVisible(true);
+        new SplashScreen().setVisible(true);
         
     }
     

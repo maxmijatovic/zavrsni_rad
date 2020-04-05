@@ -7,7 +7,7 @@ package maxmijatovic.jp21zavrsni.controller;
 
 
 import java.util.List;
-import maxmijatovic.jp21zavrsni.util.EdunovaExeption;
+import maxmijatovic.jp21zavrsni.util.BirdCounterException;
 import maxmijatovic.jp21zavrsni.util.HibernateUtil;
 import org.hibernate.Session;
 
@@ -20,11 +20,11 @@ public abstract class Obrada<T> {
     
     protected T entitet;
     protected Session session;
-    protected abstract void kontrolaCreate() throws EdunovaExeption;
-    protected abstract void kontrolaUpdate() throws EdunovaExeption;
-    protected abstract void kontrolaDelete() throws EdunovaExeption;
+    protected abstract void kontrolaCreate() throws BirdCounterException;
+    protected abstract void kontrolaUpdate() throws BirdCounterException;
+    protected abstract void kontrolaDelete() throws BirdCounterException;
     public abstract List<T> getPodaci();
-    protected abstract void nakonSpremanja() throws EdunovaExeption;
+    protected abstract void nakonSpremanja() throws BirdCounterException;
    
    
     
@@ -50,7 +50,7 @@ public abstract class Obrada<T> {
     
     
     
-    public T create() throws EdunovaExeption {
+    public T create() throws BirdCounterException {
         
         kontrolaCreate();
         save();
@@ -59,7 +59,7 @@ public abstract class Obrada<T> {
         
     }
     
-     public void createAll(List<T> lista) throws EdunovaExeption{
+     public void createAll(List<T> lista) throws BirdCounterException{
     
         session.beginTransaction();
         for(T sl : lista){
@@ -73,7 +73,7 @@ public abstract class Obrada<T> {
         
     }
     
-    public T update() throws EdunovaExeption {
+    public T update() throws BirdCounterException {
         
         kontrolaUpdate();
         save();
@@ -82,7 +82,7 @@ public abstract class Obrada<T> {
         
     }
     
-    public boolean delete() throws EdunovaExeption {
+    public boolean delete() throws BirdCounterException {
         
         kontrolaDelete();
         session.beginTransaction();

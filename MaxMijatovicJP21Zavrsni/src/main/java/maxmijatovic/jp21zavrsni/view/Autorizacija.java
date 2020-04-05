@@ -8,6 +8,7 @@ package maxmijatovic.jp21zavrsni.view;
 import javax.swing.JOptionPane;
 import maxmijatovic.jp21zavrsni.controller.ObradaParticipant;
 import maxmijatovic.jp21zavrsni.model.Participant;
+import maxmijatovic.jp21zavrsni.util.Pomocno;
 
 /**
  *
@@ -92,6 +93,7 @@ public class Autorizacija extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAutorizirajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorizirajActionPerformed
@@ -104,6 +106,8 @@ public class Autorizacija extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Greška ponovite");
             return;
         }
+        
+      Pomocno.LOGIRAN = p;   
         
       new Izbornik().setVisible(true);
       dispose();

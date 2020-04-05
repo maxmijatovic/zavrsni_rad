@@ -70,6 +70,9 @@ public class Species extends Entitet {
         this.speciesCode = speciesCode;
     }
     
-    
+    @Override
+    public String toString(){
+        return englishName;
+    }
     
 }

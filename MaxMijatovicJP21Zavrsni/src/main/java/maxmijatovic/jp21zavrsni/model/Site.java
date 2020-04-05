@@ -67,6 +67,10 @@ public class Site extends Entitet{
         this.longitude = longitude;
     }
     
+    @Override
+    public String toString(){
+        return siteName;
+    }
     
     
 }

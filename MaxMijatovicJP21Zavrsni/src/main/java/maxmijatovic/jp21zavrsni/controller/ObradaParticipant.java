@@ -8,7 +8,7 @@ package maxmijatovic.jp21zavrsni.controller;
 
 import java.util.List;
 import maxmijatovic.jp21zavrsni.model.Participant;
-import maxmijatovic.jp21zavrsni.util.EdunovaExeption;
+import maxmijatovic.jp21zavrsni.util.BirdCounterException;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
@@ -43,20 +43,19 @@ public class ObradaParticipant extends Obrada<Participant> {
     
 
     @Override
-    protected void kontrolaCreate() throws EdunovaExeption {
-      // super.kontrolaCreate();
+    protected void kontrolaCreate() throws BirdCounterException {
        kontrolaEmail();
        kontrolaLozinka();
        
     }
 
     @Override
-    protected void kontrolaUpdate() throws EdunovaExeption{
+    protected void kontrolaUpdate() throws BirdCounterException{
         
     }
 
     @Override
-    protected void kontrolaDelete() throws EdunovaExeption {
+    protected void kontrolaDelete() throws BirdCounterException {
         
     }
    
@@ -71,13 +70,13 @@ public class ObradaParticipant extends Obrada<Participant> {
         
     }
     
-    protected void kontrolaEmail()  throws EdunovaExeption{
+    protected void kontrolaEmail()  throws BirdCounterException {
        
     }
     
-    private void kontrolaLozinka() throws EdunovaExeption{
+    private void kontrolaLozinka() throws BirdCounterException {
         if(entitet.getLozinka()==null || BCrypt.checkpw("", entitet.getLozinka())){
-            throw new EdunovaExeption("Obavezno lozinka");
+            throw new BirdCounterException("Obavezno lozinka");
         }
     } 
         

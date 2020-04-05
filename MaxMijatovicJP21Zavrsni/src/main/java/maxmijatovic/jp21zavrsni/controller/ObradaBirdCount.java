@@ -7,7 +7,8 @@ package maxmijatovic.jp21zavrsni.controller;
 
 import java.util.List;
 import maxmijatovic.jp21zavrsni.model.BirdCount;
-import maxmijatovic.jp21zavrsni.util.EdunovaExeption;
+import maxmijatovic.jp21zavrsni.util.BirdCounterException;
+
 
 /**
  *
@@ -23,7 +24,7 @@ public class ObradaBirdCount extends Obrada<BirdCount>{
     }
 
     @Override
-    public BirdCount create() throws EdunovaExeption {
+    public BirdCount create() throws BirdCounterException {
        kontrolaCreate();
        save();
        nakonSpremanja();
@@ -31,7 +32,7 @@ public class ObradaBirdCount extends Obrada<BirdCount>{
     }
 
     @Override
-    public BirdCount update() throws EdunovaExeption {
+    public BirdCount update() throws BirdCounterException {
         kontrolaUpdate();
         save();
         nakonSpremanja();
@@ -50,17 +51,17 @@ public class ObradaBirdCount extends Obrada<BirdCount>{
          
         
     @Override
-    protected void kontrolaCreate() throws EdunovaExeption {
+    protected void kontrolaCreate() throws BirdCounterException {
         
     }
 
     @Override
-    protected void kontrolaUpdate() throws EdunovaExeption {
+    protected void kontrolaUpdate() throws BirdCounterException {
         
     }
 
     @Override
-    protected void kontrolaDelete() throws EdunovaExeption {
+    protected void kontrolaDelete() throws BirdCounterException {
        
     }
 
@@ -70,7 +71,7 @@ public class ObradaBirdCount extends Obrada<BirdCount>{
     }
 
     @Override
-    protected void nakonSpremanja() throws EdunovaExeption {
+    protected void nakonSpremanja() throws BirdCounterException {
         
     }
 

@@ -10,6 +10,8 @@ import maxmijatovic.jp21zavrsni.controller.ObradaSite;
 import maxmijatovic.jp21zavrsni.model.Site;
 import maxmijatovic.jp21zavrsni.util.Pomocno;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import maxmijatovic.jp21zavrsni.util.BirdCounterException;
 /**
  *
  * @author Alice
@@ -34,7 +36,28 @@ public class ViewSite extends javax.swing.JFrame {
     }
     
     private void ucitaj() {
-       
+       DefaultListModel<Site> m = new DefaultListModel<>();
+        obrada.getPodaci().forEach(s -> m.addElement(s));
+        lstPodaci.setModel(m);
+    }
+    
+    private void ucitajVrijednosti() {
+        
+        obrada.getEntitet().setSiteName(txtName.getText());
+        obrada.getEntitet().setSiteCode(txtCode.getText());
+        obrada.getEntitet().setRegion(txtRegion.getText());
+        obrada.getEntitet().setLatitude(Pomocno.getDecimalniBrojIzStringa(txtLatitude.getText()));
+        obrada.getEntitet().setLongitude(Pomocno.getDecimalniBrojIzStringa(txtLongitude.getText()));
+        
+    }
+    
+    private void postaviVrijednosti() {
+        
+        txtName.setText(obrada.getEntitet().getSiteName());
+        txtCode.setText(obrada.getEntitet().getSiteCode());
+        txtRegion.setText(obrada.getEntitet().getRegion());
+        txtLatitude.setText(Pomocno.getFormatDecimalniBroj(obrada.getEntitet().getLatitude()));
+        txtLongitude.setText(Pomocno.getFormatDecimalniBroj(obrada.getEntitet().getLongitude()));
     }
 
     /**
@@ -64,6 +87,11 @@ public class ViewSite extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lstPodaci.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                lstPodaciValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(lstPodaci);
 
         jLabel1.setText("Name");
@@ -77,10 +105,26 @@ public class ViewSite extends javax.swing.JFrame {
         jLabel5.setText("Longitude");
 
         btnCreateNew.setText("Create New");
+        btnCreateNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateNewActionPerformed(evt);
+            }
+        });
 
         btnChange.setText("Change");
+        btnChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangeActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
+        btnDelete.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,10 +153,11 @@ public class ViewSite extends javax.swing.JFrame {
                             .addComponent(txtCode)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnCreateNew, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                                 .addComponent(btnChange)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -151,7 +196,60 @@ public class ViewSite extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
+       if (obrada.getEntitet() == null) {
+            JOptionPane.showMessageDialog(null, "Prvo odaberite stavku");
+            return;
+        }
+
+        ucitajVrijednosti();
+        try {
+            obrada.update();
+            ucitaj();
+        } catch (BirdCounterException e) {
+            JOptionPane.showMessageDialog(null, e.getPoruka());
+        }
+    }//GEN-LAST:event_btnChangeActionPerformed
+
+    private void btnCreateNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNewActionPerformed
+       try {
+            obrada.setEntitet(new Site());
+            ucitajVrijednosti();
+            obrada.create();
+            ucitaj();
+        } catch (BirdCounterException ex) {
+            JOptionPane.showMessageDialog(null, ex.getPoruka());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_btnCreateNewActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        if (obrada.getEntitet() == null) {
+            JOptionPane.showMessageDialog(null, "Prvo odaberite stavku");
+            return;
+        }
+        try {
+            obrada.delete();
+            ucitaj();
+        } catch (BirdCounterException e) {
+            JOptionPane.showMessageDialog(null, e.getPoruka());
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void lstPodaciValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstPodaciValueChanged
+      if (evt.getValueIsAdjusting()) {
+            return;
+        }
+        obrada.setEntitet(lstPodaci.getSelectedValue());
+        if (obrada.getEntitet() == null) {
+            return;
+        }
+        postaviVrijednosti();
+    }//GEN-LAST:event_lstPodaciValueChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -164,7 +262,7 @@ public class ViewSite extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList<String> lstPodaci;
+    private javax.swing.JList<Site> lstPodaci;
     private javax.swing.JTextField txtCode;
     private javax.swing.JTextField txtLatitude;
     private javax.swing.JTextField txtLongitude;

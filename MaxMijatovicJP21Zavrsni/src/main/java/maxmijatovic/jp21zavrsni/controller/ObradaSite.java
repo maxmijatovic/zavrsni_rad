@@ -7,7 +7,8 @@ package maxmijatovic.jp21zavrsni.controller;
 
 import java.util.List;
 import maxmijatovic.jp21zavrsni.model.Site;
-import maxmijatovic.jp21zavrsni.util.EdunovaExeption;
+import maxmijatovic.jp21zavrsni.util.BirdCounterException;
+
 
 /**
  *
@@ -26,18 +27,18 @@ public class ObradaSite extends Obrada<Site> {
          
 
     @Override
-    protected void kontrolaCreate() throws EdunovaExeption {
+    protected void kontrolaCreate() throws BirdCounterException {
         
     }
     
 
     @Override
-    protected void kontrolaUpdate() throws EdunovaExeption {
+    protected void kontrolaUpdate() throws BirdCounterException {
        
     }
 
     @Override
-    protected void kontrolaDelete() throws EdunovaExeption {
+    protected void kontrolaDelete() throws BirdCounterException {
         
     }
 
@@ -48,7 +49,7 @@ public class ObradaSite extends Obrada<Site> {
     }
 
     @Override
-    protected void nakonSpremanja() throws EdunovaExeption {
+    protected void nakonSpremanja() throws BirdCounterException {
         
     }
     

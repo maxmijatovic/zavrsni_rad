@@ -15,7 +15,7 @@ import javax.persistence.Entity;
 public class Participant extends Entitet{
     
     private String name;
-    private String surename;
+    private String surname;
     private String email;
     private String lozinka;
 
@@ -36,12 +36,12 @@ public class Participant extends Entitet{
         this.name = name;
     }
 
-    public String getSurename() {
-        return surename;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSurename(String surename) {
-        this.surename = surename;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getEmail() {
@@ -50,6 +50,11 @@ public class Participant extends Entitet{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    
+    public String toString() {
+        return name + " " + surname;
     }
     
     
