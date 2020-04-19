@@ -6,8 +6,11 @@
 package maxmijatovic.jp21zavrsni.model;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import maxmijatovic.jp21zavrsni.util.Pomocno;
+import org.hibernate.type.descriptor.java.UUIDTypeDescriptor;
 
 /**
  *
@@ -23,6 +26,8 @@ public class Counter extends Entitet{
     
     @ManyToOne
     private BirdCount birdCount;
+    
+      
     
     private Integer numberOfBirds;
     
@@ -51,6 +56,18 @@ public class Counter extends Entitet{
     public void setNumberOfBirds(Integer numberOfBirds) {
         this.numberOfBirds = numberOfBirds;
     }
+
+    @Override
+    public String toString() {
+        return getSpecies().getEnglishName() +  " >>> " + "Counted: " + getNumberOfBirds();
+    }
+    
+    
+    
+    
+    
+
+    
     
     
     

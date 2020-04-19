@@ -15,6 +15,14 @@ import maxmijatovic.jp21zavrsni.util.BirdCounterException;
  * @author Alice
  */
 public class ObradaSpecies extends Obrada<Species>{
+    
+    public ObradaSpecies(Species species){
+        super(species);
+    }
+    
+    public ObradaSpecies() {
+        super();
+    }
 
     @Override
     protected void kontrolaCreate() throws BirdCounterException {

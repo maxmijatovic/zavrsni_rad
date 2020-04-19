@@ -46,6 +46,7 @@ public class ObradaParticipant extends Obrada<Participant> {
     protected void kontrolaCreate() throws BirdCounterException {
        kontrolaEmail();
        kontrolaLozinka();
+      
        
     }
 
@@ -71,14 +72,26 @@ public class ObradaParticipant extends Obrada<Participant> {
     }
     
     protected void kontrolaEmail()  throws BirdCounterException {
+        
+         Long ukupno = (Long) session
+                .createQuery(" select count(p) from Participant p "
+                + " where p.email=:email")
+                .setParameter("email", entitet.getEmail())
+                .uniqueResult();
+        
+        if(ukupno>0) {
+            throw new BirdCounterException("The Email already exists");
+        }
        
     }
     
     private void kontrolaLozinka() throws BirdCounterException {
         if(entitet.getLozinka()==null || BCrypt.checkpw("", entitet.getLozinka())){
-            throw new BirdCounterException("Obavezno lozinka");
+            throw new BirdCounterException("Password Required");
         }
     } 
+    
+   
         
     
 }

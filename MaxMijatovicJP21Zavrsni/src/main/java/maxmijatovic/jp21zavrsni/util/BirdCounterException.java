@@ -12,23 +12,21 @@ package maxmijatovic.jp21zavrsni.util;
 public class BirdCounterException extends Exception {
     
     private String poruka;
-
-    public BirdCounterException(String message) {
-        super(message);
+    
+    public BirdCounterException(String poruka){
+        this.poruka=poruka;
     }
 
    
+    public void setPoruka(String poruka) {
+        this.poruka = poruka;
+    }   
     
-    
-    
-
     public String getPoruka() {
         return poruka;
     }
 
-    public void setPoruka(String poruka) {
-        this.poruka = poruka;
-    }
+   
     
     
     

@@ -22,15 +22,13 @@ import javax.persistence.Table;
 @Table(name = "bird_count")
 public class BirdCount extends Entitet{
     
+    private String name;
     private Date date;
-    private String coverage;
-    private String quality;
-    private String method;
+    private String coverage;       
     private String water;
     private String ice;
-    private String tidal;
     private String weather;
-    private String disturbed;
+   
     
    
     
@@ -52,8 +50,15 @@ public class BirdCount extends Entitet{
         this.counters = counters;
     }
 
+    public String getName() {
+        return name;
+    }
 
-    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+        
     public Date getDate() {
         return date;
     }
@@ -70,22 +75,7 @@ public class BirdCount extends Entitet{
         this.coverage = coverage;
     }
 
-    public String getQuality() {
-        return quality;
-    }
-
-    public void setQuality(String quality) {
-        this.quality = quality;
-    }
-
-    public String getMethod() {
-        return method;
-    }
-
-    public void setMethod(String method) {
-        this.method = method;
-    }
-
+      
     public String getWater() {
         return water;
     }
@@ -102,14 +92,7 @@ public class BirdCount extends Entitet{
         this.ice = ice;
     }
 
-    public String getTidal() {
-        return tidal;
-    }
-
-    public void setTidal(String tidal) {
-        this.tidal = tidal;
-    }
-
+       
     public String getWeather() {
         return weather;
     }
@@ -118,14 +101,7 @@ public class BirdCount extends Entitet{
         this.weather = weather;
     }
 
-    public String getDisturbed() {
-        return disturbed;
-    }
-
-    public void setDisturbed(String disturbed) {
-        this.disturbed = disturbed;
-    }
-
+        
     public Site getSite() {
         return site;
     }
@@ -140,6 +116,11 @@ public class BirdCount extends Entitet{
 
     public void setParticipant(Participant participant) {
         this.participant = participant;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
     
     
