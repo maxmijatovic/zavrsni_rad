@@ -505,7 +505,7 @@ public class ViewBirdCount extends javax.swing.JFrame {
     
    
     m.addElement(c);
-    lstSpeciesInCount.repaint();
+    
    
    
     

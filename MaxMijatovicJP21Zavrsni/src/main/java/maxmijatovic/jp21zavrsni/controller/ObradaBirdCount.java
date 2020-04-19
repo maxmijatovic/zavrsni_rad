@@ -5,6 +5,7 @@
  */
 package maxmijatovic.jp21zavrsni.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import maxmijatovic.jp21zavrsni.model.BirdCount;
 import maxmijatovic.jp21zavrsni.util.BirdCounterException;
@@ -47,6 +48,15 @@ public class ObradaBirdCount extends Obrada<BirdCount>{
         });
         session.getTransaction().commit();
     }
+     
+    public void obrisiCounters(){
+        session.beginTransaction();
+        entitet.getCounters().forEach((c)->{
+            session.delete(c);
+        });
+        session.getTransaction().commit();
+        entitet.setCounters(new ArrayList<>());
+    } 
     
          
         
@@ -62,7 +72,7 @@ public class ObradaBirdCount extends Obrada<BirdCount>{
 
     @Override
     protected void kontrolaDelete() throws BirdCounterException {
-       
+       obrisiCounters();
     }
 
     @Override
