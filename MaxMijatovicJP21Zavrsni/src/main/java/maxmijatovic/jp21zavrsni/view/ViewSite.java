@@ -31,7 +31,7 @@ public class ViewSite extends javax.swing.JFrame {
     
     
     private void postInitComponents() {
-        setTitle("Sites - " + Pomocno.LOGIRAN.getName());
+        setTitle("Sites - " + Pomocno.LOGIRAN.getSurname());
         ucitaj();
     }
     

@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import maxmijatovic.jp21zavrsni.controller.ObradaParticipant;
 import maxmijatovic.jp21zavrsni.model.Participant;
 import maxmijatovic.jp21zavrsni.util.BirdCounterException;
+import maxmijatovic.jp21zavrsni.util.Pomocno;
 
 /**
  *
@@ -25,6 +26,12 @@ public class ViewParticipant extends javax.swing.JFrame {
     public ViewParticipant() {
         initComponents();
         obrada = new ObradaParticipant();
+        ucitaj();
+        postInitComponents();
+    }
+    
+    private void postInitComponents() {
+        setTitle("Participants - " + Pomocno.LOGIRAN.getSurname());
         ucitaj();
     }
     

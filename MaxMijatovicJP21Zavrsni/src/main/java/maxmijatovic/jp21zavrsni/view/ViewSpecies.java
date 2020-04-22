@@ -33,7 +33,7 @@ public class ViewSpecies extends javax.swing.JFrame {
     }
     
      private void postInitComponents() {
-        setTitle("Species - " + Pomocno.LOGIRAN.getName());
+        setTitle("Species - " + Pomocno.LOGIRAN.getSurname());
         ucitaj();
     }
     

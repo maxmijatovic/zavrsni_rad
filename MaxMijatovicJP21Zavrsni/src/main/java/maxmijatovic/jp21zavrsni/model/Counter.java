@@ -59,7 +59,7 @@ public class Counter extends Entitet{
 
     @Override
     public String toString() {
-        return getSpecies().getEnglishName() +  " >>> " + "Counted: " + getNumberOfBirds();
+        return getBirdCount() + " > " + getSpecies().getEnglishName() + " >>> " + "Counted: " + getNumberOfBirds();
     }
     
     

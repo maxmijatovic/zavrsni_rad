@@ -48,7 +48,7 @@ public class ObradaSpecies extends Obrada<Species>{
         return session.createQuery("from Species s "
                 + " where concat(s.englishName) like :uvjet ")
                 .setParameter("uvjet", "%" + uvjet + "%")
-                .setMaxResults(10).list();
+                .setMaxResults(25).list();
     }
 
     @Override

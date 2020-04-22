@@ -136,10 +136,14 @@ public class Registracija extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrirajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrirajActionPerformed
-       if(!Arrays.equals(pswLozinka.getPassword(), pswLozinkaPonovo.getPassword())){
+       
+        
+        if(!Arrays.equals(pswLozinka.getPassword(), pswLozinkaPonovo.getPassword())){
            JOptionPane.showMessageDialog(null, "Passwords doesn't match");
            return;
        }
+        
+         
        
        Participant p = new Participant();
        p.setEmail(txtEmail.getText());
@@ -149,8 +153,11 @@ public class Registracija extends javax.swing.JFrame {
                BCrypt.gensalt()));
        obrada.setEntitet(p);
        
+        
+       
        try{
-           obrada.create();
+           
+           obrada.create();                    
            JOptionPane.showMessageDialog(null, "Registration Successfull. Please Login.");
        }catch(BirdCounterException e){
            JOptionPane.showMessageDialog(null, e.getPoruka());

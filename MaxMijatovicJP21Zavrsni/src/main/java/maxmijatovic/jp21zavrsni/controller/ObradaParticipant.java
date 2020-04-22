@@ -38,6 +38,7 @@ public class ObradaParticipant extends Obrada<Participant> {
             return null;
         }
         return BCrypt.checkpw(lozinka, p.getLozinka()) ? p : null;
+       
     }
     
     
@@ -45,7 +46,7 @@ public class ObradaParticipant extends Obrada<Participant> {
     @Override
     protected void kontrolaCreate() throws BirdCounterException {
        kontrolaEmail();
-       kontrolaLozinka();
+      
       
        
     }
@@ -91,6 +92,7 @@ public class ObradaParticipant extends Obrada<Participant> {
         }
     } 
     
+   
    
         
     

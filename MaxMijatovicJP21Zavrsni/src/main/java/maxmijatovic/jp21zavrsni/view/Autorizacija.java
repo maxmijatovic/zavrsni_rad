@@ -45,7 +45,7 @@ public class Autorizacija extends javax.swing.JFrame {
 
         txtEmail.setText("maxima.mijatovic@gmail.com");
 
-        jLabel2.setText("Lozinka");
+        jLabel2.setText("Password");
 
         pswLozinka.setText("123");
 
@@ -124,6 +124,8 @@ public class Autorizacija extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Oops, something went wrong. Please Try again. ");
             return;
         }
+        
+        
       
        Pomocno.LOGIRAN = p;
        new Izbornik().setVisible(true);
